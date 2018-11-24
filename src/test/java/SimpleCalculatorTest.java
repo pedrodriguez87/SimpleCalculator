@@ -66,20 +66,48 @@ public class SimpleCalculatorTest {
     }
 
     @Test
-    public void absolute_or_negative_number() {
+    public void absolute_zero_or_negative_number() {
 
         SimpleCalculator cal = new SimpleCalculator(0);
         cal.add(10);
         cal.divide(2);
-        cal.substract(15);
+        cal.substract(5);
+
+        Assert.assertEquals(0, cal.getSign());
+    }
+
+    @Test
+    public void convert_to_absolute_value() {
+
+        SimpleCalculator cal = new SimpleCalculator(0);
+        cal.add(38);
+        cal.divide(2);
+        cal.substract(24);
         cal.abs();
 
-        Assert.assertEquals(10, cal.value);
+        Assert.assertEquals(5, cal.value);
 
     }
 
+    @Test
+    public void factorial() {
+
+        SimpleCalculator cal = new SimpleCalculator(0);
+        cal.factorial();
+
+        Assert.assertEquals(1,cal.value);
+
+    }
+
+    @Test
+    public void power() {
+
+        SimpleCalculator cal = new SimpleCalculator(5);
+        cal.power(3);
+
+        Assert.assertEquals(125,cal.value);
 
 
 
-
+    }
 }

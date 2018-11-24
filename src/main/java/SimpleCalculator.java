@@ -5,9 +5,7 @@ public class SimpleCalculator {
     public SimpleCalculator(int value){
         this.value = value;
     }
-    public void add(int value) {
-        this.value += value;
-    }
+    public void add(int value) { this.value += value; }
     public void substract(int value) {
         this.value -= value;
     }
@@ -30,12 +28,32 @@ public class SimpleCalculator {
         return value;
     }
 
-    public int abs() {
+    public void abs() {
 
         if (value < 0){
-            return value = value * -1;
+            this.value = value * -1;
         }
-        return value;
+    }
+
+    public void factorial() {
+
+        int result = 1;
+        int counter = 1;
+        while (counter <= this.value) {
+            result *= counter;
+            counter++;
+        }
+        this.value = result;
+    }
+
+    public void power(int value) {
+        int result = 1;
+        int counter = 1;
+        while (counter <= value) {
+            result = result * this.value;
+            counter++;
+        }
+        this.value = result;
     }
 
 }
